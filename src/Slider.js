@@ -53,8 +53,8 @@ export default class Slider extends React.Component {
   }
 
   handleTouchEnd (event) {
-    touchendX = event.screenX;
-    touchendY = event.screenY;
+    this.touchendX = event.screenX;
+    this.touchendY = event.screenY;
     this.handleGesure();
   }
 
