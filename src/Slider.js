@@ -34,6 +34,7 @@ export default class Slider extends React.Component {
   }
 
   handleSwipes () {
+    console.log(1);
     let touchstartX = 0;
     let touchstartY = 0;
     let touchendX = 0;
@@ -223,6 +224,7 @@ export default class Slider extends React.Component {
       dotContainer = <div className="dots" key="dots">{this.getDots()}</div>
     }
 
+    this.handleSwipes()
     return (
       <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave}>
         <div className="slides-container" id="slides-container" style={{transition: `transform ${this.state.transformSpeed}s ease-in-out`, transform: `translateX(${this.state.currentSlide.transform}px)`}}>
@@ -234,7 +236,5 @@ export default class Slider extends React.Component {
         {dotContainer}
       </div>
     )
-
-    this.handleSwipes()
   }
 };
