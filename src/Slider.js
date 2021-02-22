@@ -7,10 +7,10 @@ export default class Slider extends React.Component {
     super(props)
   
     this.state = {
-        transformSpeed: 1,
+        transformSpeed: 0.6,
         currentSlide: {
           slide: 1,
-          transform: -640
+          transform: -720
         },
     }
     
@@ -34,7 +34,6 @@ export default class Slider extends React.Component {
   }
 
   handleSwipes () {
-    console.log(1);
     let touchstartX = 0;
     let touchstartY = 0;
     let touchendX = 0;
@@ -68,7 +67,7 @@ export default class Slider extends React.Component {
       transformSpeed: 0,
       currentSlide: {
         slide: 1,
-        transform: -640
+        transform: -720
       }
     })
   }
@@ -78,7 +77,7 @@ export default class Slider extends React.Component {
       transformSpeed: 0,
       currentSlide: {
         slide: this.props.data.length,
-        transform: -(this.props.data.length * 640)
+        transform: -(this.props.data.length * 720)
       }
     })
   }
@@ -87,14 +86,14 @@ export default class Slider extends React.Component {
     let sliderContainer = document.getElementById('slides-container')
     sliderContainer.removeEventListener('transitionend', this.handleLastSlide)
     this.setState({ 
-      transformSpeed: 1
+      transformSpeed: 0.6
     })
 
     if (this.state.currentSlide.slide === this.props.data.length) {
       this.setState({ 
         currentSlide: {
           slide: 1,
-          transform: this.state.currentSlide.transform - 640
+          transform: this.state.currentSlide.transform - 720
         }
       })
       sliderContainer.addEventListener('transitionend', this.handleLastSlide)
@@ -102,7 +101,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: this.state.currentSlide.slide + 1,
-          transform: this.state.currentSlide.transform - 640
+          transform: this.state.currentSlide.transform - 720
         }
       })
     }
@@ -112,14 +111,14 @@ export default class Slider extends React.Component {
     let sliderContainer = document.getElementById('slides-container')
     sliderContainer.removeEventListener('transitionend', this.handleFirstSlide)
     this.setState({ 
-      transformSpeed: 1
+      transformSpeed: 0.6
     })
 
     if (this.state.currentSlide.slide === 1) {
       this.setState({ 
         currentSlide: {
           slide: this.props.data.length,
-          transform: this.state.currentSlide.transform + 640
+          transform: this.state.currentSlide.transform + 720
         }
       })
       sliderContainer.addEventListener('transitionend', this.handleFirstSlide)
@@ -127,7 +126,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: this.state.currentSlide.slide - 1,
-          transform: this.state.currentSlide.transform + 640
+          transform: this.state.currentSlide.transform + 720
         }
       })
     }
@@ -138,7 +137,7 @@ export default class Slider extends React.Component {
     this.setState({
       currentSlide: {
         slide: currentDot,
-        transform: -(currentDot * 640)
+        transform: -(currentDot * 720)
       }
     })
   }
