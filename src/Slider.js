@@ -205,8 +205,8 @@ export default class Slider extends React.Component {
     if (this.props.buttons) {
       buttonContainer = (
         <div className="buttons">
-          <i className="fas fa-arrow-right nextBtn" onClick={this.nextSlide}></i>
           <i className="fas fa-arrow-left prevBtn" onClick={this.prevSlide}></i>
+          <i className="fas fa-arrow-right nextBtn" onClick={this.nextSlide}></i>
         </div>
       )
     }
@@ -220,6 +220,8 @@ export default class Slider extends React.Component {
         <div className="slides-container" id="slides-container" style={{transition: `transform ${this.state.transformSpeed}s ease-in-out`, transform: `translateX(${this.state.currentSlide.transform}px)`}}>
           {this.getSlide()}
         </div>
+        <div className="prevSlide" onClick={this.prevSlide}></div>
+        <div className="nextSlide" onClick={this.nextSlide}></div>
         {buttonContainer}
         {dotContainer}
       </div>
