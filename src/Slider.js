@@ -31,35 +31,31 @@ export default class Slider extends React.Component {
         this.prevSlide()
       }
     })
-  }
 
-  handleSwipes () {
     let touchstartX = 0;
     let touchstartY = 0;
     let touchendX = 0;
     let touchendY = 0;
+  }
 
-    let touchZone = document.getElementById('slides-container');
-
-    touchZone.addEventListener('touchstart', function(event) {
-        touchstartX = event.screenX;
-        touchstartY = event.screenY;
-    }, false);
-
-    touchZone.addEventListener('touchend', function(event) {
-        touchendX = event.screenX;
-        touchendY = event.screenY;
-        handleGesure();
-    }, false); 
-
-    function handleGesure() {
-        if (touchendX < touchstartX) {
-            this.prevSlide()
-        }
-        if (touchendX > touchstartX) {
-            this.nextSlide()
-        }
+  handleGesure() {
+    if (touchendX < touchstartX) {
+        this.prevSlide()
     }
+    if (touchendX > touchstartX) {
+        this.nextSlide()
+    }
+}
+
+  handleTouchStart (event) {
+    this.touchstartX = event.screenX;
+    this.touchstartY = event.screenY;
+  }
+
+  handleTouchEnd (event) {
+    touchendX = event.screenX;
+    touchendY = event.screenY;
+    this.handleGesure();
   }
 
   handleLastSlide () {
@@ -223,9 +219,8 @@ export default class Slider extends React.Component {
       dotContainer = <div className="dots" key="dots">{this.getDots()}</div>
     }
 
-    this.handleSwipes()
     return (
-      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave}>
+      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}>
         <div className="slides-container" id="slides-container" style={{transition: `transform ${this.state.transformSpeed}s ease-in-out`, transform: `translateX(${this.state.currentSlide.transform}px)`}}>
           {this.getSlide()}
         </div>
