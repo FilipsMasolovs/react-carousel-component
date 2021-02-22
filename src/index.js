@@ -6,9 +6,9 @@ import bg from './assets/1.jpg'
 
 ReactDOM.render(
     <Slider 
-        autoplay={true}
+        autoplay={false}
         autoplayTime={4000}
-        buttons={true}
+        buttons={false}
         data={[
             {
               bgColor: 'red',
