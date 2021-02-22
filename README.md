@@ -21,11 +21,11 @@ The component recieves props:
 1. autoplay - is a boolean (true/false) and will determine wethere the autoplay functionality is enabled
 2. autoplayTime - is a number (in miliseconds) and will determine the timeout for the autoplay
 3. buttons - is a boolean (true/false) and will determine wethere there will be buttons (arrows) on the sides of the slider
-4. data - is and array of objects, each object is one slide content.
-    Structure of the object: {
-        bgColor: a string that will determine the background color of the slide ex. 'white' or '#fff'
-        bgImage: a link to the background image of the slide
-        content: and HTML objec ex (<h1>Simply add an H1 tag in the content!</h1>)
+4. data - is and array of objects, each object is one slide content.<br>
+    Structure of the object: {<br>
+        bgColor: a string that will determine the background color of the slide ex. 'white' or '#fff'<br>
+        bgImage: a link to the background image of the slide<br>
+        content: any HTML object
     }
 5. dots - is a boolean (true/false) and will determine wethere there will be clickable dots at the bottom of the slider
 
