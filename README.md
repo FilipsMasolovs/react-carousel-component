@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### IMPORTANT TO KNOW!!!
+### `IMPORTANT TO KNOW!!!`
 This is a basic setup, index.js renders just one component - Slider!
 The component recieves props:
 
@@ -28,3 +28,6 @@ The component recieves props:
         content: and HTML objec ex (<h1>Simply add an H1 tag in the content!</h1>)
     }
 5. dots - is a boolean (true/false) and will determine wethere there will be clickable dots at the bottom of the slider
+
+### NOTES:
+1. Current slide size is hardcoded to 640x640, but it is easily to change to set it as a prop also.

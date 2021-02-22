@@ -10,7 +10,7 @@ export default class Slider extends React.Component {
         transformSpeed: 1,
         currentSlide: {
           slide: 1,
-          transform: -360
+          transform: -640
         },
     }
     
@@ -59,7 +59,7 @@ export default class Slider extends React.Component {
       transformSpeed: 0,
       currentSlide: {
         slide: 1,
-        transform: -360
+        transform: -640
       }
     })
   }
@@ -69,7 +69,7 @@ export default class Slider extends React.Component {
       transformSpeed: 0,
       currentSlide: {
         slide: this.props.data.length,
-        transform: -(this.props.data.length * 360)
+        transform: -(this.props.data.length * 640)
       }
     })
   }
@@ -85,7 +85,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: 1,
-          transform: this.state.currentSlide.transform - 360
+          transform: this.state.currentSlide.transform - 640
         }
       })
       sliderContainer.addEventListener('transitionend', this.handleLastSlide)
@@ -93,7 +93,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: this.state.currentSlide.slide + 1,
-          transform: this.state.currentSlide.transform - 360
+          transform: this.state.currentSlide.transform - 640
         }
       })
     }
@@ -110,7 +110,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: this.props.data.length,
-          transform: this.state.currentSlide.transform + 360
+          transform: this.state.currentSlide.transform + 640
         }
       })
       sliderContainer.addEventListener('transitionend', this.handleFirstSlide)
@@ -118,7 +118,7 @@ export default class Slider extends React.Component {
       this.setState({ 
         currentSlide: {
           slide: this.state.currentSlide.slide - 1,
-          transform: this.state.currentSlide.transform + 360
+          transform: this.state.currentSlide.transform + 640
         }
       })
     }
@@ -129,7 +129,7 @@ export default class Slider extends React.Component {
     this.setState({
       currentSlide: {
         slide: currentDot,
-        transform: -(currentDot * 360)
+        transform: -(currentDot * 640)
       }
     })
   }
