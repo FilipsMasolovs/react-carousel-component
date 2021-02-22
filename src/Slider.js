@@ -39,10 +39,10 @@ export default class Slider extends React.Component {
   }
 
   handleGesure() {
-    if (touchendX < touchstartX) {
+    if (this.touchendX < this.touchstartX) {
         this.prevSlide()
     }
-    if (touchendX > touchstartX) {
+    if (this.touchendX > this.touchstartX) {
         this.nextSlide()
     }
 }
