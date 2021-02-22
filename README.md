@@ -30,4 +30,4 @@ The component recieves props:
 5. dots - is a boolean (true/false) and will determine wethere there will be clickable dots at the bottom of the slider
 
 ### NOTES:
-1. Currently slide size is hardcoded to 640x640, but it is easily to change to set it as a prop also.
+1. Currently slide size is hardcoded to 720x720, but it is easily to change to set it as a prop also.
