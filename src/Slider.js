@@ -23,6 +23,14 @@ export default class Slider extends React.Component {
     this.handleFirstSlide = this.handleFirstSlide.bind(this)
 
     this.handleAutoplay()
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        this.nextSlide()
+      } else if (e.key === 'ArrowLeft') {
+        this.prevSlide()
+      }
+    })
   }
 
   handleSwipes () {

@@ -54,7 +54,7 @@ html, body, #root {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: color 0.8s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 
 .nextBtn {
@@ -85,14 +85,14 @@ html, body, #root {
 .dot {
   border: 2px grey solid;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
   cursor: pointer;
-  margin: 0 3px 0 3px;
+  margin: 0 4px;
   background-color: transparent;
   outline: none;
-  transition: border-color 0.8s ease-in-out;
+  transition: border-color 0.4s ease-in-out;
 }
 
 .dot:hover {
