@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-carousel-component/static/css/main.6bc22940.chunk.css",
-    "main.js": "/react-carousel-component/static/js/main.4221a2d0.chunk.js",
-    "main.js.map": "/react-carousel-component/static/js/main.4221a2d0.chunk.js.map",
+    "main.js": "/react-carousel-component/static/js/main.4ae0efe4.chunk.js",
+    "main.js.map": "/react-carousel-component/static/js/main.4ae0efe4.chunk.js.map",
     "runtime-main.js": "/react-carousel-component/static/js/runtime-main.204c6f6f.js",
     "runtime-main.js.map": "/react-carousel-component/static/js/runtime-main.204c6f6f.js.map",
     "static/js/2.b2969076.chunk.js": "/react-carousel-component/static/js/2.b2969076.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.204c6f6f.js",
     "static/js/2.b2969076.chunk.js",
     "static/css/main.6bc22940.chunk.css",
-    "static/js/main.4221a2d0.chunk.js"
+    "static/js/main.4ae0efe4.chunk.js"
   ]
 }
