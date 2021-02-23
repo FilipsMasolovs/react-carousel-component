@@ -220,12 +220,12 @@ export default class Slider extends React.Component {
     }
 
     return (
-      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}>
+      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave}>
         <div className="slides-container" id="slides-container" style={{transition: `transform ${this.state.transformSpeed}s ease-in-out`, transform: `translateX(${this.state.currentSlide.transform}px)`}}>
           {this.getSlide()}
         </div>
-        <div className="prevSlide" onClick={this.prevSlide}></div>
-        <div className="nextSlide" onClick={this.nextSlide}></div>
+        <div className="prevSlide" onClick={this.prevSlide} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}></div>
+        <div className="nextSlide" onClick={this.nextSlide} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}></div>
         {buttonContainer}
         {dotContainer}
       </div>
