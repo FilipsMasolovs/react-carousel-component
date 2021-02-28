@@ -21,6 +21,8 @@ export default class Slider extends React.Component {
     this.sliderMouseLeave = this.sliderMouseLeave.bind(this)  
     this.handleLastSlide = this.handleLastSlide.bind(this)
     this.handleFirstSlide = this.handleFirstSlide.bind(this)
+    this.handleTouchStart = this.handleTouchStart.bind(this)
+    this.handleTouchEnd = this.handleTouchEnd.bind(this)
 
     this.handleAutoplay()
 
@@ -33,28 +35,24 @@ export default class Slider extends React.Component {
     })
 
     let touchstartX = 0;
-    let touchstartY = 0;
     let touchendX = 0;
-    let touchendY = 0;
   }
 
   handleGesure() {
     if (this.touchendX < this.touchstartX) {
-        this.prevSlide()
+        this.nextSlide()
     }
     if (this.touchendX > this.touchstartX) {
-        this.nextSlide()
+        this.prevSlide()
     }
 }
 
   handleTouchStart (event) {
-    this.touchstartX = event.screenX;
-    this.touchstartY = event.screenY;
+    this.touchstartX = event.nativeEvent.changedTouches[0].screenX;
   }
 
   handleTouchEnd (event) {
-    this.touchendX = event.screenX;
-    this.touchendY = event.screenY;
+    this.touchendX = event.nativeEvent.changedTouches[0].screenX;
     this.handleGesure();
   }
 
@@ -220,12 +218,12 @@ export default class Slider extends React.Component {
     }
 
     return (
-      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave}>
+      <div className="slider" onMouseEnter={this.sliderMouseEnter} onMouseLeave={this.sliderMouseLeave} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}>
         <div className="slides-container" id="slides-container" style={{transition: `transform ${this.state.transformSpeed}s ease-in-out`, transform: `translateX(${this.state.currentSlide.transform}px)`}}>
           {this.getSlide()}
         </div>
-        <div className="prevSlide" onClick={this.prevSlide} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}></div>
-        <div className="nextSlide" onClick={this.nextSlide} onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd}></div>
+        <div className="prevSlide" onClick={this.prevSlide} ></div>
+        <div className="nextSlide" onClick={this.nextSlide} ></div>
         {buttonContainer}
         {dotContainer}
       </div>
